@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Cloud Cost Calculator</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <div class="container">
+        <header>
+            <h1>Cloud Cost Calculator</h1>
+            <p>Estimate your monthly cloud computing costs</p>
+        </header>
+
+        <main>
+            <div class="calculator-card">
+                <h2>Select Cloud Provider</h2>
+                <select id="provider">
+                    <option value="aws">Amazon Web Services (AWS)</option>
+                    <option value="azure">Microsoft Azure</option>
+                    <option value="gcp">Google Cloud Platform (GCP)</option>
+                </select>
+
+                <h2>Your Requirements</h2>
+                
+                <div class="input-group">
+                    <label for="storage">Storage (GB)</label>
+                    <input type="number" id="storage" value="100" min="0" max="10000">
+                </div>
+
+                <div class="input-group">
+                    <label for="compute">Compute Hours per Month</label>
+                    <input type="number" id="compute" value="730" min="0" max="730">
+                </div>
+
+                <div class="input-group">
+                    <label for="bandwidth">Data Transfer (GB)</label>
+                    <input type="number" id="bandwidth" value="50" min="0" max="5000">
+                </div>
+
+                <button onclick="calculateCost()">Calculate Cost</button>
+
+                <div id="result" class="result hidden">
+                    <h3>Estimated Monthly Cost</h3>
+                    <p class="cost" id="costAmount">$0.00</p>
+                    <p class="breakdown" id="breakdown"></p>
+                </div>
+            </div>
+        </main>
+
+        <footer>
+            <p>Unit 19 Assignment - Software Development for Cloud Computing</p>
+        </footer>
+    </div>
+
+    <script src="calculator.js"></script>
+</body>
+</html>
